@@ -1,0 +1,10 @@
+// let c1: any = '菜了吗';
+// let b2: number = 1;
+// b2.toFixed(1);
+// b2 = c1;
+// b2.toFixed(1);
+var c1 = '菜了吗';
+var b2 = 1;
+b2.toFixed(1);
+// b2 = c1;
+b2.toFixed(1);
