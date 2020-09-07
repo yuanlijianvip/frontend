@@ -1,2 +1,2 @@
 # frontend
-前端个人项目和demo
+前端知识点、demo和个人项目
