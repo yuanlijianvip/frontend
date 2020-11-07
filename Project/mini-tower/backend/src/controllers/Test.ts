@@ -6,8 +6,10 @@ import {
   Header,
   Params,
   Post,
-  Query
+  Query,
+  Ctx
 } from 'koa-ts-controllers';
+import {Context} from 'koa';
 import {IsNumberString, IsNotEmpty} from 'class-validator';
 import Boom from '@hapi/Boom';
 
@@ -15,6 +17,20 @@ class GetUsersQuery {
 
   @IsNumberString()
   page: number;
+
+}
+
+class PostUserBody {
+
+  @IsNotEmpty({
+      message: '用户名不能为空'
+  })
+  name: string;
+
+  @IsNotEmpty({
+      message: '密码不能为空'
+  })
+  password: string;
 
 }
 
@@ -45,15 +61,19 @@ class TestController {
 
   @Post('/user')
   async postUser(
-    @Body() body: {
-      name: string,
-      password: string
-    },
+    @Ctx() ctx: Context,
+    @Body() body: PostUserBody,
     @Header() h: any
   ) {
-    console.log(body);
-    console.log(h);
-    return `当前提交的数据是：${JSON.stringify(body)}`;
+    // console.log(body);
+    // console.log(h);
+    // return `当前提交的数据是：${JSON.stringify(body)}`;
+    ctx.status = 201;
+    return {
+      id: 1,
+      name: body.name,
+      createAt: new Date()
+    }
   }
 
   @Get('/users')
