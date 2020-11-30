@@ -26,5 +26,21 @@ let numberOrString: number | string = 23
 numberOrString = 'abc'
 // numberOrString = true
 
+let arrOfNumbers: number[] = [1,2,3]
+arrOfNumbers.push(5)
+// arrOfNumbers.push('str')
+
+//类数组
+// function test() {
+//   console.log(arguments);
+//   let arr: any[] = arguments;
+// }
+
+// 元组 Tuple
+let user: [string, number] = ['str', 1]
+// user = ['str1', 2, true]
+
+
+
 
 
