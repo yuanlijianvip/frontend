@@ -87,6 +87,16 @@ Vue.component(CollapseTransition.name, CollapseTransition);
 // Vue.prototype.$message = ElementUI.Message;
 // use interceptor to add auth token to every request exception login
 
+Vue.directive('focus', {
+  bind(el, binding) {
+    console.log("bind");
+  },
+  inserted(el) {
+    console.log("instered");
+    el.focus();
+  }
+})
+
 axios.interceptors.request.use(config => {
   if (config.url.indexOf('/api/login') === -1) {
     const authToken = authService.getAuthToken();
