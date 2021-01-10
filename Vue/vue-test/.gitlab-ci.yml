@@ -1,0 +1,98 @@
+image:
+  harbor.shannonai.com/inf/ci-autobuild-pro:latest
+stages:
+  - static_analysis
+  - build_image
+  - test
+  - chart_push
+  - publish_test_image
+  - sonar_check
+  - publish_image
+  - cleanup_env
+
+
+before_script:
+  - gitlab_ci_init
+
+static_code_check_job:
+  stage: static_analysis
+  only:
+    - merge_request
+  script:
+    - manage
+
+
+image_build_test_job:
+  stage: build_image
+  only:
+    - merge_request
+  script:
+    - manage
+
+
+unit_test_job:
+  stage: test
+  only:
+    - merge_request
+  script:
+    - manage
+
+regression_test_job:
+  stage: test
+  only:
+    - merge_request
+  script:
+    - manage
+
+coverage_test_job:
+  stage: test
+  only:
+    - merge_request
+  script:
+    - manage
+
+performance_test_job:
+  stage: test
+  only:
+    - merge_request
+  script:
+    - manage
+
+test_image_publish_job:
+  stage: publish_test_image
+  only:
+    - master
+  script:
+    - manage
+
+
+chart_push_job:
+  stage: chart_push
+  only:
+    - master
+  script:
+    - manage
+
+image_publish_job:
+  stage: publish_image
+  only:
+    - tags
+  script:
+    - manage
+
+sonarqube_code_check_job:
+  stage: sonar_check
+  only:
+    - master
+  script:
+    - manage
+
+image_clean_up_job:
+  stage: cleanup_env
+  allow_failure: true
+  only:
+    - merge_request
+    - tags
+  when: always
+  script:
+    - manage

@@ -1,0 +1,33 @@
+.el-pagination.border-pagination {
+  .btn-prev,
+  .btn-next,
+  .el-pager .number,
+  .el-icon-more {
+    min-width: 28px;
+    padding: 0;
+    margin: 0 4px;
+    border: 1px solid #e5e6ee;
+    border-radius: 2px;
+    color: #586069;
+    &:hover {
+      color: #0153CD;
+    }
+  }
+  .el-pager .number.active {
+    border: 1px solid #0153CD;
+    border-radius: 2px;
+    color: #0153CD;
+    background-color: #ffffff;
+  }
+  .el-icon-more {
+    color: #586069;
+  }
+  .el-icon-d-arrow-right {
+    border: 1px solid transparent;
+    color: #0153CD;
+  }
+  .el-icon-d-arrow-left {
+    border: 1px solid transparent;
+    color: #0153CD;
+  }
+}

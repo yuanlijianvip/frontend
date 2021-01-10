@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function doAdd(num1, num2) {
+      //   console.log(num2);
+      //   arguments[1] = 10;
+      //   console.log(arguments[0], arguments[1], num1, num2);
+      // }
+      // doAdd(1, 2)
+
+      // function createComparisonFunction(propertyName) {
+      //   console.log(propertyName);
+      //   return function (object1, object2) {
+      //     console.log(object1, object2);
+      //     let value1 = object1[propertyName];
+      //     let value2 = object2[propertyName];
+      //     console.log(value1, value2);
+      //     if (value1 < value2) {
+      //       return -1;
+      //     } else if (value1 > value2) {
+      //       return 1;
+      //     } else {
+      //       return 0;
+      //     }
+      //   };
+      // }
+
+      // let data = [
+      //   { name: "Zachary", age: 28 },
+      //   { name: "Nicholas", age: 29 },
+      // ];
+      // data.sort(createComparisonFunction("name"));
+      // console.log(data[0].name); // Nicholas
+
+      let a = [{ a: 1, b: 2 }];
+      let b = [
+        { codeId: "a", isChecked: false },
+        { codeId: "c", isChecked: false },
+      ];
+      a.forEach((item) => {
+        Object.keys(item).forEach((key) => {
+          console.log(key, item[key]);
+          b.forEach((i) => {
+            if (key == i.codeId && item[key] === 1) {
+              i.isChecked = true;
+            }
+          });
+        })
+      });
+      console.log(b);
+
+
+      // let map = new Map(...a);
+      // console.log(map);
+      // for(let [key,value] of map.entries()) {
+      //   console.log(key, value);
+      // }
+    </script>
+  </body>
+</html>
