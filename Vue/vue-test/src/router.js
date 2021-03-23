@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import authService from '@/services/authService';
 import NProgress from 'nprogress';
 
-const MainPage = () => import('@/views/MainPage');
+const MainPage = () => import('@/views/MainPage1');
 
 // const LoginPage = () => import(/* webpackPrefetch: true, webpackChunkName: "login-page" */ '@/views/LoginPage');
 
