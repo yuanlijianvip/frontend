@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/05-js/05-js",
+    "pages/03-wxss/03-wxss",
     "pages/02-wxml/02-wxml",
     "pages/index/index",
     "pages/logs/logs"

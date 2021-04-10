@@ -1,0 +1,6 @@
+/* pages/05-js/05-js.wxss */
+#myCanvas{
+  width: 750rpx;
+  height: 750rpx;
+  background-color: antiquewhite;
+}
